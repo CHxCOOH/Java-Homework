@@ -3,6 +3,7 @@ public class E {
 		for ( int i = 20302; i < 20322; i++ ) {
 			System.out.print((char)i+" ");
 		}
+		System.out.println();
 	}
 }
 
