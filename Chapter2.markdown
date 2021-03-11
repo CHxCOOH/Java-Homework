@@ -1,14 +1,34 @@
-1.(1)  类、变量、方法、类型、数组、文件等命名的有效字符序列称为标识符。符号的名字就是标识符。
+[TOC]
 
-   (2) Java 的保留字(具有特定用途/赋予特定意义的单词，例如循环控制 while/for ，类型名 int 等等)，不能作为标识符。true 和 false 并非关键字，但是不能作为标识符。举例: (类型名) int byte short char long float double etc..
+------
 
-   (3) byte short int long float double boolean char
+# 1. 问答题
 
-   (4) float 常量需要以 f 结尾，例如 3.14f。一个(带有小数点的)浮点数的字面量的默认类型是 double. 
+## (1) 什么叫标识符？标识符的规则是什么？false 是否可以作为标识符？
 
-   (5) array.length 字段。对于一个一维数组，该字段表示元素个数；对于一个二维数，则表示该二维数组中一维数组的个数。
+类、变量、方法、类型、数组、文件等命名的有效字符序列称为标识符。符号的名字就是标识符。
 
-3.(1) 输出了 Unicode 编码从 20302 到 20322 的字符（这里为排版方便，将 println 换成了 print 加空格）。
+## (2) 什么叫关键字？true 和 false 是否是关键字？请说出6个关键字。
+
+ Java 的保留字(具有特定用途/赋予特定意义的单词，例如循环控制 while/for ，类型名 int 等等)，不能作为标识符。true 和 false 并非关键字，但是不能作为标识符。举例: (类型名) int byte short char long float double etc..
+
+## (3) Java 的基本数据类型都是什么？
+
+byte short int long float double boolean char
+
+## (4) float 型常量和 double 型常量在表示上有什么区别？
+
+float 常量需要以 f 结尾，例如 3.14f。一个(带有小数点的)浮点数的字面量的默认类型是 double. 
+
+## (5) 怎样获取一维数组的长度，怎样获取二维数组中一维数组的个数？
+
+array.length 字段。对于一个一维数组，该字段表示元素个数；对于一个二维数，则表示该二维数组中一维数组的个数。
+
+# 3. 阅读或调试程序
+
+## (1) 上机运行下列程序，注意观察输出的结果。
+
+输出了 Unicode 编码从 20302 到 20322 的字符（此处为排版方便，将 println 换成了 print 加空格）。
 
 ```java
 public class E {
@@ -24,7 +44,10 @@ public class E {
 低 住 佐 佑 佒 体 佔 何 佖 佗 佘 余 佚 佛 作 佝 佞 佟 你 佡
 ```
 
-   (2) System.out.print() 输出完毕后不换行，而 System.out.println() 输出结束后自动换行。
+## (2) 上机调试下列程序，注意 `System.out.print()` 和 `System.out.println()` 的区别。
+
+`System.out.print()` 输出完毕后不换行，而` System.out.println() `输出结束后自动换行。
+
 ```java
 public class OutputData {
 	public static void main(String args[]) {
@@ -43,7 +66,10 @@ public class OutputData {
 x + y = 666
 ```
 
-   (3) 这里的代码使用了包装类型 (wrap class)，以此获取各数据类型的范围，达到类似 C/C++ limits.h 头文件类似的效果。
+## (3) 上机调试下列程序，了解基本数据类型数据的取值范围。
+
+这里的代码使用了包装类型 (wrap class)，以此获取各数据类型的范围，达到类似 C/C++ limits.h 头文件类似的效果。
+
 ```java
 public class E {
 	public static void main(String args[]) {
@@ -66,7 +92,9 @@ float取值范围: 1.4E-45 to 3.4028235E38
 double取值范围: 4.9E-324 to 1.7976931348623157E308
 ```
 
-   (4) 第 5 行 `b = a;` 导致 b 与 a 引用/指向了相同的数组。因此，b 的长度也变成了 4，b[0] 就是 a[0]，即 1. 
+## (4) 下列程序标注的【代码1】和【代码2】的输出结果是什么？
+
+第 5 行 `b = a;` 导致 b 与 a 引用/指向了相同的数组。因此，b 的长度也变成了 4，b[0] 就是 a[0]，即 1. 
 
 ```java
 public class E {
@@ -85,7 +113,9 @@ public class E {
 b[0] = 1
 ```
 
-   (5) 类似上面，b[0] 与 a 引用了同样的数组。因此，b[0][3] 就是 a[3]，`b[0][1] = b[1][3]`实际上将 b[1][3] 中的数字 7 赋值给了 a[1]。
+## (5) 下列程序标注的【代码1】和【代码2】的输出结果是什么？
+
+类似上面，b[0] 与 a 引用了同样的数组。因此，b[0][3] 就是 a[3]，`b[0][1] = b[1][3]`实际上将 b[1][3] 中的数字 7 赋值给了 a[1]。
 
 ```java
 public class E {
@@ -104,7 +134,11 @@ b[0][3] = 40
 a[1] = 7
 ```
 
-4.(1) 编写一个应用程序，给出汉字“你”“我”“他”在 Unicode 表中的位置。代码及运行结果如下。
+# 4. 编程题
+
+## (1) 编写一个应用程序，给出汉字“你”“我”“他”在 Unicode 表中的位置。
+
+代码及运行结果如下。
 
 ```java
 public class ch {
@@ -123,16 +157,33 @@ public class ch {
 他 in Unicode: 20182
 ```
 
-   (2) 编写一个Java应用程序，输出全部的希腊字母。因希腊字母有不同写法，这里输出除小写24个希腊字母外，Unicode 962 位为保留的未定义字符，在不同的字体、不同的运行环境下，可能有不同的运行结果（大写希腊字母也存在此问题）。代码及运行结果如下。
+## (2) 编写一个Java应用程序，输出全部的希腊字母。
+
+因希腊字母有不同写法，这里输出除小写24个希腊字母外，Unicode 962 位为保留的未定义字符，在不同的字体、不同的运行环境下，可能有不同的运行结果（大写希腊字母也存在此问题）。代码及运行结果如下。
+
 ```java
 public class GreekAlpha {
 	public static void main(String args[]) {
+		for ( int i = 913; i <= 937; i++ ) {
+			if ( i == 930 )
+				continue;
+			System.out.print((char)i+" ");
+		}
+		System.out.println();
 		for ( int i = 945; i <= 969; i++ ) {
+			if ( i == 962 )
+				continue;
 			System.out.print((char)i+" ");
 		}
 		System.out.println();
 	}
 }
 ```
+```
+[admin@iZbp18743tpvttty07dgbrZ Homework]$ java Chapter2/4/GreekAlpha.java
+Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω 
+α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ τ υ φ χ ψ ω
+```
+
 ![](./Chapter2/result.png)
 
