@@ -5,6 +5,6 @@ public class For {
             pdt *= i;
             sum += 1/pdt;
         }
-        System.out.println(sum);
+        System.out.println("sum = "+sum);
     }
 }
