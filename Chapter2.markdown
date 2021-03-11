@@ -9,6 +9,7 @@
    (5) array.length 字段。对于一个一维数组，该字段表示元素个数；对于一个二维数，则表示该二维数组中一维数组的个数。
 
 3. (1) 输出了 Unicode 编码从 20302 到 20322 的字符（这里为排版方便，将 println 换成了 print 加空格）。
+
 ```java
 public class E {
 	public static void main(String args[]) {
@@ -104,6 +105,7 @@ a[1] = 7
 ```
 
 4. (1) 编写一个应用程序，给出汉字“你”“我”“他”在 Unicode 表中的位置。代码及运行结果如下。
+
 ```java
 public class ch {
 	public static void main(String args[]) {
